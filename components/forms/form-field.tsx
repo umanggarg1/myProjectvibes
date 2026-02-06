@@ -3,6 +3,7 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 
 interface FormFieldProps {
+  
   label: string;
   name: string;
   id: string;
@@ -16,9 +17,11 @@ interface FormFieldProps {
   error: string[];
   helperText?: string;
   textarea?: boolean;
+
 }
 
 export const FormField = ({
+  
   label,
   name,
   id,
@@ -28,6 +31,7 @@ export const FormField = ({
   error,
   helperText,
   textarea,
+
 }: FormFieldProps) => {
   
   return (
@@ -36,6 +40,7 @@ export const FormField = ({
       <Label htmlFor={id}>{label}</Label>
       
       {textarea ? (
+        
         <Textarea
           id={id}
           name={name}
@@ -45,7 +50,9 @@ export const FormField = ({
             onChange as (e: React.ChangeEvent<HTMLTextAreaElement>) => void
           }
         />
+      
       ) : (
+        
         <Input
           id={id}
           name={name}

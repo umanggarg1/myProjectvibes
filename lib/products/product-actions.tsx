@@ -13,6 +13,7 @@ export const addProductAction = async (
   prevState: FormState,
   formData: FormData
 ) => {
+  
   try {
     const { userId, orgId } = await auth();
 
@@ -41,6 +42,7 @@ export const addProductAction = async (
     const validatedData = productSchema.safeParse(rawFormData);
 
     if (!validatedData.success) {
+      
       console.log(validatedData.error.flatten().fieldErrors);
       return {
         success: false,
@@ -72,7 +74,9 @@ export const addProductAction = async (
       message: "Product submitted successfully! It will be reviewed shortly.",
       errors: undefined,
     };
+  
   } catch (error) {
+    
     console.error(error);
 
     if (error instanceof z.ZodError) {
@@ -88,6 +92,7 @@ export const addProductAction = async (
       errors: undefined,
       message: "Failed to submit product",
     };
+  
   }
 };
 
@@ -133,6 +138,7 @@ export const upvoteProductAction = async (productId: number) => {
     };
   }
 };
+
 
 export const downvoteProductAction = async (productId: number) => {
   try {

@@ -35,7 +35,11 @@ export async function getAllProducts() {
 }
 
 export async function getRecentlyLaunchedProducts() {
+
   await connection();
+  // await connection(); is used to wait until the connection is fully established before moving on.
+  // we cannot use "use cache" when we need real time data or with dynamic component, so we have to remove "use cache" from components\landing-page\recently-launched-products.tsx file
+
   const productsData = await getAllApprovedProducts();
   const oneWeekAgo = new Date();
   oneWeekAgo.setDate(oneWeekAgo.getDate() - 7);

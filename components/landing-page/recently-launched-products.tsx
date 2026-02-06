@@ -5,11 +5,14 @@ import EmptyState from "@/components/common/empty-state";
 import { getRecentlyLaunchedProducts } from "@/lib/products/product-select";
 
 export default async function RecentlyLaunchedProducts() {
+
   const recentlyLaunchedProducts = await getRecentlyLaunchedProducts();
 
   return (
     <section className="py-20">
+      
       <div className="wrapper space-y-12">
+        
         <SectionHeader
           title="Recently Launched"
           icon={RocketIcon}
@@ -17,18 +20,27 @@ export default async function RecentlyLaunchedProducts() {
         />
 
         {recentlyLaunchedProducts.length > 0 ? (
+          
           <div className="grid-wrapper">
+            
             {recentlyLaunchedProducts.map((product) => (
               <ProductCard key={product.id} product={product} />
             ))}
+
           </div>
+
         ) : (
+          
           <EmptyState
             message="No products launched in the last week. Check back soon for new launches."
             icon={CalendarIcon}
           />
+
         )}
+
       </div>
+
     </section>
+    
   );
 }

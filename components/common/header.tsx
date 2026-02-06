@@ -13,6 +13,7 @@ import CustomUserButton from "./custom-user-button";
 
 const Logo = () => {
   return (
+    
     <Link href="/" className="flex items-center gap-2 group">
     
       <div className="size-8 rounded-lg bg-primary flex items-center justify-center">
@@ -45,6 +46,7 @@ export default function Header() {
             >
               <HomeIcon className="size-4" />
               <span>Home</span>
+
             </Link>
       
             <Link
@@ -53,6 +55,7 @@ export default function Header() {
             >
               <CompassIcon className="size-4" />
               <span>Explore</span>
+
             </Link>
       
           </nav>
@@ -85,7 +88,7 @@ export default function Header() {
                   </Link>
                 </Button>
 
-                <CustomUserButton />
+                <CustomUserButton />   {/* to show organisation part and admin panel */}
       
               </SignedIn>
       

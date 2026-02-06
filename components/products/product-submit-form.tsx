@@ -15,12 +15,14 @@ const initialState: FormState = {
 };
 
 export default function ProductSubmitForm() {
+  
   const [state, formAction, isPending] = useActionState(
     addProductAction,
     initialState
   );
 
   const { errors, message, success } = state;
+
   const getFieldErrors = (fieldName: string): string[] => {
     if (!errors) return [];
     return (errors as Record<string, string[]>)[fieldName] ?? [];
@@ -42,6 +44,7 @@ export default function ProductSubmitForm() {
           {message}
         </div>
       )}
+
       <FormField
         label="Product Name"
         name="name"
@@ -51,6 +54,7 @@ export default function ProductSubmitForm() {
         onChange={() => {}}
         error={getFieldErrors("name")}
       />
+
       <FormField
         label="Slug"
         name="slug"
@@ -93,6 +97,7 @@ export default function ProductSubmitForm() {
         error={getFieldErrors("websiteUrl")}
         helperText="Enter your product's website or landing page"
       />
+
       <FormField
         label="Tags"
         name="tags"
@@ -114,6 +119,9 @@ export default function ProductSubmitForm() {
           </>
         )}
       </Button>
+
     </form>
+
   );
+
 }

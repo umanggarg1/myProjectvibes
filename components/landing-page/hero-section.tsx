@@ -80,14 +80,15 @@ export default function HeroSection() {
       
             </Button>
       
-              <Button
+            <Button
               asChild
               size="lg"
               className="text-base px-8 shadow-lg"
               variant="secondary"
             >
               <Link href="/explore">
-                Explore Projects <ArrowRightIcon className="size-5" />
+                Explore Projects 
+                <ArrowRightIcon className="size-5" />
               </Link>
             </Button>
           </div>
